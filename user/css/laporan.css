@@ -1,0 +1,121 @@
+
+body{margin:0;font-family:Poppins,Arial;background:#FFF5E4}
+.main{padding:30px;min-height:100vh}
+
+/* FILTER */
+.filter-wrapper{
+    background:white;
+    padding:20px;
+    border-radius:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+.filter-box{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.filter-box input,.filter-box select,.filter-box button{
+    padding:10px 14px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+.filter-box button{
+    background:#EE6983;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.export-box{display:flex;gap:12px}
+.btn-export{
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+}
+.pdf{background:#850E35}
+.excel{background:#2E7D32}
+
+/* TABLE */
+table{
+    width:100%;
+    margin-top:25px;
+    background:white;
+    border-radius:15px;
+    border-collapse:collapse;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+th,td{padding:14px;border-bottom:1px solid #eee}
+th{background:#FFC4C4;color:#850E35}
+
+/* TOTAL */
+.total-box{
+    margin-top:20px;
+    background:#EE6983;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+    line-height:1.8;
+    font-weight:600;
+}
+
+/* PER KATEGORI */
+.kategori-box{
+    margin-top:25px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+.kategori-box p{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px dashed #ddd;
+}
+
+/* ================= MOBILE  ================= */
+@media(max-width:768px){
+
+    .filter-wrapper{flex-direction:column;align-items:flex-start}
+
+    table thead{display:none}
+
+    table,tbody,tr,td{
+        display:block;
+        width:100%;
+    }
+
+    th{
+        display:none;
+    }
+
+    tr{
+        margin-bottom:16px;
+        background:white;
+        border-radius:15px;
+        padding:14px;
+        box-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+
+    td{
+        border:none;
+        padding:6px 0;
+    }
+
+    td::before{
+        content: attr(data-label);
+        display:block;
+        font-weight:600;
+        color:#850E35;
+        margin-bottom:4px;
+        font-size:13px;
+    }
+}

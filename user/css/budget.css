@@ -1,0 +1,148 @@
+
+:root{
+    --primary:#850E35;
+    --secondary:#FF5C8A;
+    --bg:#FFF5E4;
+    --card:#ffffff;
+    --soft:#FFF1DC;
+}
+
+*{
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.main{
+    padding:30px;
+    background:var(--bg);
+    min-height:100vh;
+}
+
+/* TITLE */
+
+
+/* SUMMARY */
+.summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    margin:25px 0;
+}
+.box{
+    background:var(--card);
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.box small{
+    color:#888;
+    font-size:14px;
+}
+.box h2{
+    margin-top:8px;
+    font-size:26px;
+}
+
+/* FORM */
+.form-budget{
+    background:var(--card);
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+.form-budget form{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.form-budget select,
+.form-budget input{
+    flex:1;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    outline:none;
+}
+.form-budget input:focus,
+.form-budget select:focus{
+    border-color:var(--secondary);
+}
+
+/* CATEGORY CARD */
+.cat-card{
+    background:var(--soft);
+    padding:20px;
+    border-radius:18px;
+    margin-bottom:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,.08);
+}
+.cat-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+.cat-header strong{
+    font-size:17px;
+}
+
+/* PROGRESS */
+.progress{
+    height:12px;
+    background:#ffd6d6;
+    border-radius:20px;
+    overflow:hidden;
+    margin:8px 0;
+}
+.progress div{
+    height:100%;
+    background:linear-gradient(90deg,#ff5c8a,#ff85a2);
+    transition:.3s;
+}
+
+/* BUTTON */
+button{
+    border:none;
+    padding:10px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.2s;
+}
+button:hover{
+    transform:scale(1.05);
+}
+.btn-add{
+    background:#2e7d32;
+    color:#fff;
+}
+.btn-edit{
+    background:#1976d2;
+    color:#fff;
+}
+.btn-hapus{
+    background:#c62828;
+    color:#fff;
+}
+.btn-batal{
+    background:#9e9e9e;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:12px;
+}
+
+/* EDIT FORM */
+.cat-card form{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .main{padding:18px}
+    h1{font-size:22px}
+    .form-budget form{flex-direction:column}
+}

@@ -1,0 +1,264 @@
+
+:root{
+    --primary:#EE6983;
+  
+    --card:#FFFFFF;
+    --text:#1F2937;
+    --muted:#850E35;
+}
+
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:'poppins',sans-serif;
+    background:#FFF5E4;
+    color:var(--text);
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+    margin-bottom:40px;
+}
+.header h1{
+    font-size:28px;
+    margin:0;
+     color:var(--muted);
+}
+strong{
+     color:var(--muted);
+}
+
+  .header-right{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.logout-btn{
+    background:#EE6983;
+    color:white;
+    padding:8px 16px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    transition:.2s;
+}
+.logout-btn:hover{
+    background:#DC2626;
+    transform:translateY(-2px);
+}
+
+
+/* SUMMARY */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-bottom:45px;
+}
+.stat-card{
+    background:#FFC4C4;
+    color:white;
+    padding:28px;
+    border-radius:22px;
+    position:relative;
+    box-shadow:0 15px 15px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card h2{
+    font-size:26px;
+    margin:12px 0 0;
+}
+.stat-card span{
+    font-size:14px;
+    opacity:.85;
+}
+.stat-icon{
+    position:absolute;
+    top:22px;
+    right:22px;
+    font-size:28px;
+    opacity:.25;
+}
+
+/* MENU */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-bottom:45px;
+}
+.menu-card{
+    background:var(--card);
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.menu-card h3{
+    margin:0;
+       color:var(--muted);
+}
+.menu-card p{
+ 
+    font-size:14px;
+}
+.menu-card a{
+    display:inline-block;
+    margin-top:16px;
+    background:var(--primary);
+    color:white;
+    padding:12px 22px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:14px;
+}
+.menu-card a:hover{
+    opacity:.9;
+}
+
+/* TABLE */
+.table-box{
+    background:var(--card);
+    padding:32px;
+    border-radius:24px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+.table-box h3{
+    margin-bottom:22px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th{
+    text-align:left;
+    color:var(--muted);
+    font-size:13px;
+    padding-bottom:14px;
+}
+td{
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+.badge{
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:12px;
+    color:white;
+}
+.admin{background:var(--primary)}
+.user{background:#9CA3AF}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px){
+    .container{
+        padding:30px 16px;
+    }
+
+    .stat-card h2{
+        font-size:22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    /* HEADER */
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .header h1{
+        font-size:22px;
+    }
+
+    /* STAT */
+    .stats{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .stat-card{
+        padding:22px;
+        border-radius:18px;
+    }
+
+    /* MENU */
+    .menu{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .menu-card{
+        padding:24px;
+    }
+
+    .menu-card a{
+        width:100%;
+        text-align:center;
+        padding:14px;
+        font-size:15px;
+    }
+
+    /* TABLE */
+    .table-box{
+        padding:22px;
+    }
+
+    .table-box h3{
+        font-size:18px;
+    }
+
+    table{
+        min-width:600px;
+    }
+
+    .table-box{
+        overflow-x:auto;
+    }
+
+    td, th{
+        font-size:13px;
+    }
+}
+
+/* Extra small (HP kecil) */
+@media (max-width: 480px){
+
+    body{
+        font-size:14px;
+    }
+
+    .stat-card h2{
+        font-size:20px;
+    }
+
+    .stat-icon{
+        font-size:22px;
+    }
+
+    .menu-card h3{
+        font-size:17px;
+    }
+
+    .menu-card p{
+        font-size:13px;
+    }
+}
+
