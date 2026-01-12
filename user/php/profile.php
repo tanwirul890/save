@@ -74,7 +74,7 @@ if (isset($_POST['simpan'])) {
 
     if ($hasil == 1) {
         echo "<script>alert('Profile berhasil diperbarui');location='profile.php';</script>";
-    } else {
+    } else {;
         echo "<script>alert('Profile gagal diperbarui');</script>";
     }
 }

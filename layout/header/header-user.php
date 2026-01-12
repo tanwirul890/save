@@ -51,7 +51,7 @@ body {
 }
 
 .burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .burger.active span:nth-child(2) {
