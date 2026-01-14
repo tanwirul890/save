@@ -1,4 +1,4 @@
-name: CI/CD PHP Apache (Local VM)
+name: Deploy PHP Website
 
 on:
   push:
@@ -7,23 +7,19 @@ on:
 
 jobs:
   deploy:
-    name: Deploy ke Apache Local
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set Permission Project
-        run: |
-          sudo chown -R www-data:www-data /var/www/html/myproject
-          sudo chmod -R 755 /var/www/html/myproject
-
-      - name: Deploy Code
-        run: |
-          cd /var/www/html/myproject
-          git pull origin main
-
-      - name: Reload Apache
-        run: |
-          sudo systemctl reload apache2
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/html/myproject
+            git pull origin main
+            sudo systemctl restart apache2
