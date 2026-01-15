@@ -14,7 +14,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Setup koneksi SSH dan jalankan perintah di Ubuntu Azure
+      # 2. Deploy ke server via SSH
       - name: Deploy to Server via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -23,9 +23,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            # Masuk ke folder aplikasi
-            cd /var/www/html/save
-            
-            # Tarik kode terbaru dari GitHub
+            cd /var/www/html
+
+            git config --global --add safe.directory /var/www/html/save
+
+            cd save
             git pull origin main
-      
