@@ -1,20 +1,17 @@
 name: CI/CD Pipeline to Azure
 
-# Trigger: Berjalan otomatis setiap ada push ke branch 'main'
 on:
   push:
     branches: [ main ]
 
-jobs:
+jobs: 
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Ambil kode terbaru dari repo
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Deploy ke server via SSH
       - name: Deploy to Server via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -23,9 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /var/www/html
-
-            git config --global --add safe.directory /var/www/html/save
-
-            cd save
-            git pull origin main
+            cd /var/www/html/save || exit
+            
+            git fetch origin main
+            git reset --hard origin/main
