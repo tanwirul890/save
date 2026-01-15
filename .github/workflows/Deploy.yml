@@ -28,11 +28,4 @@ jobs:
             
             # Tarik kode terbaru dari GitHub
             git pull origin main
-            
-            # (Opsional) Jika menggunakan Node.js, jalankan ini:
-            # npm install
-            # pm2 restart all
-            
-            # (Opsional) Jika menggunakan PHP/Laravel:
-            # composer install
-            # php artisan migrate
+      
