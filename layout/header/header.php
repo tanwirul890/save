@@ -84,7 +84,7 @@ if (isset($_POST['login'])) {
     }
 
     body {
-        background: #191818;
+        background: #f70000;
         display: flex;
         justify-content: center;
         align-items: center;
