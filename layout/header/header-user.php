@@ -30,7 +30,7 @@ $halaman = basename($_SERVER['REQUEST_URI']);
 
 body {
     font-family: 'Poppins';
-    background: #ededed;
+    background: #220606;
 }
 
 /* ================= BURGER MENU ================= */
