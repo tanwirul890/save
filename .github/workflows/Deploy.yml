@@ -24,7 +24,7 @@ jobs:
           port: 22
           script: |
             # Masuk ke folder aplikasi
-            cd /var/www/nama-aplikasi-anda 
+            cd /var/www/html/save
             
             # Tarik kode terbaru dari GitHub
             git pull origin main
