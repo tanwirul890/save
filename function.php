@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect('localhost', 'root', '', 'save');
+$db = mysqli_connect('localhost', 'moon', '123', 'save');
 
 function select($query)
 {
